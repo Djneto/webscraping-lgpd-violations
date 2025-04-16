@@ -1,24 +1,18 @@
 {
-  "name": "apdados-scraper",
+  "name": "webscraping-lgpd-violations",
   "version": "1.0.0",
-  "description": "Web scraper for APDados LGPD violations data",
-  "main": "dist/index.js",
+  "description": "This TypeScript application scrapes LGPD (Brazilian General Data Protection Law) violations data from the APDados website (https://apdados.org/violacoes) and creates visualizations of the data.",
+  "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "ts-node src/index.ts"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.2",
-    "cheerio": "^1.0.0-rc.12",
-    "puppeteer": "^21.5.0",
+    "chart.js": "^4.4.9",
     "csv-writer": "^1.6.0",
-    "chart.js": "^4.4.0",
-    "canvas": "^2.11.2"
-  },
-  "devDependencies": {
-    "@types/node": "^20.10.0",
-    "typescript": "^5.3.2",
-    "ts-node": "^10.9.1"
+    "fs": "^0.0.1-security",
+    "puppeteer": "^24.6.1"
   }
-} 
+}
