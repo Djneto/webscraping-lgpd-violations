@@ -1,6 +1,7 @@
 const { createObjectCsvWriter } = require("csv-writer");
 const data = require("./lgpd_violations.json");
 const fs = require("fs");
+const path = require("path");
 
 // Helper: parse date safely
 function parseDate(dateStr) {
@@ -153,10 +154,17 @@ console.log(
   "✅ Relatório em Markdown gerado com sucesso em 'relatorio_lgpd.md'"
 );
 
+// Garantir que a pasta "csv" existe
+const csvDir = path.join(__dirname, "csv");
+if (!fs.existsSync(csvDir)) {
+  fs.mkdirSync(csvDir);
+}
+
 // Função para gerar CSV
 function generateCsv(data, filename, header) {
+  const filePath = path.join(csvDir, filename);
   const csvWriter = createObjectCsvWriter({
-    path: filename,
+    path: filePath,
     header: header,
   });
 
@@ -167,7 +175,7 @@ function generateCsv(data, filename, header) {
 
   csvWriter
     .writeRecords(records)
-    .then(() => console.log(`✅ CSV gerado com sucesso: ${filename}`))
+    .then(() => console.log(`✅ CSV gerado com sucesso: ${filePath}`))
     .catch((err) => console.error("Erro ao gerar o CSV:", err));
 }
 
