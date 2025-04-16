@@ -26,29 +26,22 @@ npm install
 
 ## Usage
 
-1. Build the TypeScript code:
+1. Run the scraper:
 ```bash
-npm run build
+node scraper.js
 ```
 
-2. Run the scraper:
+2. Run the analyser:
 ```bash
-npm start
+node analyze.js
 ```
 
-For development with hot-reload:
-```bash
-npm run dev
-```
 
 ## Output
 
 The script will generate:
-- `raw_violations.csv`: Contains all scraped data
-- `plots/` directory with three PNG files:
-  - `violations_per_year.png`
-  - `top_organizations.png`
-  - `violation_types.png`
+- `lgpd_violations.json`: Contains all scraped data
+- `csv/` directory with .csv files:
 
 ## Notes
 
